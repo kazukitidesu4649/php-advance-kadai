@@ -12,8 +12,8 @@ $password = 'root';
       // 動的に変わる値をプレースホルダに置き換えたUPDATE文をあらかじめ用意する
       $sql_update = '
           UPDATE books
-          SET product_code = :book_code,
-          product_name = :book_name,
+          SET book_code = :book_code,
+          book_name = :book_name,
           price = :price,
           stock_quantity = :stock_quantity,
           genre_code = :genre_code
@@ -121,7 +121,7 @@ $password = 'root';
                      <input type="number" id="book_code" name="book_code" value="<?= $product['book_code'] ?>" min="0" max="100000000" required>
  
                      <label for="book_name">書籍名</label>
-                     <input type="text" id="book_name" name="bok_name" value="<?= $product['book_name'] ?>" maxlength="50" required>
+                     <input type="text" id="book_name" name="book_name" value="<?= $product['book_name'] ?>" maxlength="50" required>
  
                      <label for="price">単価</label>
                      <input type="number" id="price" name="price" value="<?= $product['price'] ?>" min="0" max="100000000" required>
@@ -130,7 +130,7 @@ $password = 'root';
                      <input type="number" id="stock_quantity" name="stock_quantity" value="<?= $product['stock_quantity'] ?>" min="0" max="100000000" required>
  
                      <label for="genre_code">ジャンルコード</label>
-                     <select id="vendor_code" name="vendor_code" required>
+                     <select id="genre_code" name="genre_code" required>
                          <option disabled selected value>選択してください</option>
                          <?php
                          // 配列の中身を順番に取り出し、セレクトボックスの選択肢として出力する

@@ -11,7 +11,7 @@ $password = 'root';
   
           // 動的に変わる値をプレースホルダに置き換えたINSERT文をあらかじめ用意する
           $sql_insert = '
-              INSERT INTO products (book_code, book_name, price, stock_quantity, genre_code)
+              INSERT INTO books (book_code, book_name, price, stock_quantity, genre_code)
               VALUES (:book_code, :book_name, :price, :stock_quantity, :genre_code)
           ';
           $stmt_insert = $pdo->prepare($sql_insert);
@@ -85,11 +85,11 @@ $password = 'root';
              </div>
              <form action="create.php" method="post" class="registration-form">
                  <div>
-                     <label for="product_code">書籍コード</label>
-                     <input type="number" id="product_code" name="product_code" min="0" max="100000000" required>
+                     <label for="book_code">書籍コード</label>
+                     <input type="number" id="book_code" name="book_code" min="0" max="100000000" required>
  
-                     <label for="product_name">書籍名</label>
-                     <input type="text" id="product_name" name="product_name" maxlength="50" required>
+                     <label for="book_name">書籍名</label>
+                     <input type="text" id="book_name" name="book_name" maxlength="50" required>
  
                      <label for="price">単価</label>
                      <input type="number" id="price" name="price" min="0" max="100000000" required>
